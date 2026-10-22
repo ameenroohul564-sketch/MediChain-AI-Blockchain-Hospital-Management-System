@@ -1,0 +1,36 @@
+{
+  "name": "medichain-ai-server",
+  "version": "1.0.0",
+  "description": "Backend server for MediChain AI - Blockchain-Based Hospital Management System",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "start:prod": "node dist/server.js",
+    "create-doctor": "tsx src/scripts/createDoctor.ts",
+    "create-admin": "tsx src/scripts/createAdmin.ts",
+    "blockchain": "ganache --server.port 7545 --chain.chainId 1337 --wallet.mnemonic \"test test test test test test test test test test test junk\" --database.dbPath ./ganache-data",
+"deploy-ledger": "tsx src/scripts/deployLedger.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "ethers": "^6.17.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0",
+    "solc": "^0.8.37"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.3.1",
+    "ganache": "^7.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
